@@ -27,3 +27,20 @@
     margin-left: auto;
     margin-right: auto;
 }
+.chat-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: rgb(95, 67, 255);
+}
+.chat-text {
+    font-size: 1.3em;
+    border-radius: 20%;
+    background-color: rgb(90, 228, 221);
+}
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}

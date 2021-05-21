@@ -54,7 +54,8 @@ io.on("connection", (socket)=>{
     console.log("---文字が送信されました---");
     console.log("送信者のsocket.id, room名：", socket.rooms);
     console.log("ユーザーリスト：",room_list);
-    io.to(msg.room_name).emit("member-post", msg);
+    // io.to(msg.room_name).emit("member-post", msg);
+    socket.to(msg.room_name).emit("member-post", msg); //ルーム内の送信者以外に送信
   });
 
   // ユーザが切断された時
