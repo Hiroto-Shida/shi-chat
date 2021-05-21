@@ -1,0 +1,29 @@
+/* タイトル */
+.title {
+    text-align: center;
+    background-color: rgb(93, 255, 255);
+    margin-bottom: 1em;
+}
+.title h1, .title p{
+    margin: 0;
+    padding: 0.5em 0;
+}
+
+/* 名前入力 */
+#name-post {
+    text-align: center;
+    display: block;
+}
+
+/* チャット */
+#chat-box {
+    text-align: center;
+    display: none;
+}
+.chat-name {
+    text-align: right;
+}
+#msglist {
+    margin-left: auto;
+    margin-right: auto;
+}
