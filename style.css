@@ -1,8 +1,7 @@
 /* タイトル */
 .title {
     text-align: center;
-    background-color: rgb(93, 255, 255);
-    margin-bottom: 1em;
+    background-color: #89fdcd;
 }
 .title h1, .title p{
     margin: 0;
@@ -16,6 +15,21 @@
 }
 
 /* チャット */
+.chat-main-box {
+    width: 500px;
+    height: 500px;
+    overflow: scroll;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+    border-radius: 0.5em;
+    border: #b588fc 1px solid;
+}
+#msglist {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
 #chat-box {
     text-align: center;
     display: none;
@@ -23,24 +37,74 @@
 .chat-name {
     text-align: right;
 }
-#msglist {
-    margin-left: auto;
-    margin-right: auto;
+.chat-icon-box {
+    width: 60px;
 }
 .chat-icon {
+    margin: 10px auto auto auto;
     width: 50px;
     height: 50px;
     border-radius: 100%;
-    background-color: rgb(95, 67, 255);
+    background-color: #b588fc;
 }
 .chat-text {
+    margin: 0;
+    position: relative;
+    display:inline-block;
+    padding: 5px;
     font-size: 1.3em;
-    border-radius: 20%;
-    background-color: rgb(90, 228, 221);
+    border-radius: 0.5em;
+    background-color: #89fdcd;
 }
 .text-left {
+    padding-right: 1.5em;
     text-align: left;
 }
+.text-left .chat-text:before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    right: 100%;
+    margin-top: -7px;
+    border: 7px solid transparent;
+    border-right: 7px solid #89fdcd;
+}
+
 .text-right {
+    padding-left: 1.5em;
     text-align: right;
+}
+.text-right .chat-text:before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 100%;
+    margin-top: -7px;
+    border: 7px solid transparent;
+    border-left: 7px solid #89fdcd;
+}
+
+/* メッセージ入力 */
+#frm-post {
+    width: 500px;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 0.1em;
+}
+#frm-post input{
+    width: 87%;
+    height: 100%;
+    border: #b588fc 2px solid;
+    border-radius: 0.5em;
+}
+#frm-post input:focus {
+    background-color: #ffc;
+    outline: none; /* ※ブラウザが標準で付加する線を消したいとき */
+}
+#frm-post button{
+    width: 10%;
+    height: 100%;
+    border-radius: 0.5em;
+    background-color: #89fdcd;
 }

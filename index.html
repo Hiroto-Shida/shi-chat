@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>shi - chat</title>
+  <title>shi-chat</title>
   <link rel="stylesheet" href="/style.css">
   <script  type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </head>
@@ -11,7 +11,7 @@
 
 <!-- タイトル -->
 <div class="title">
-  <h1>shi - chat</h1>
+  <h1>shi-chat</h1>
   <p>全ルーム接続数：<span id="count"></span></p>
   <p>ルーム名：<span id="room-name"></span></p>
   <p>参加者：<span id="par-name"></span></p>
@@ -27,13 +27,15 @@
 <!-- チャット -->
 <div id="chat-box">
   <div>あなたの名前：<span id="user-name"></span></div>
+  <!-- 発言ログ -->
+  <div class="chat-main-box">
+    <table id="msglist">
+    </table>
+  </div>
   <form id="frm-post">
-    <input type="text" id="msg" placeholder="メッセージを入力">
+    <input type="text" id="msg" placeholder="メッセージを入力" autocomplete="off">
     <button>送信</button>
   </form>
-  <!-- 発言ログ -->
-  <table id="msglist">
-  </table>
 </div>
 
 <!-- <script src="/socket.io/socket.io.js"></script> -->
@@ -129,13 +131,13 @@
       return(false);
     }
 
-
     const list = document.querySelector("#msglist");
     const tr1 = document.createElement("tr");
     const tr2 = document.createElement("tr");
 
     const td = document.createElement("td");
     td.setAttribute("rowspan", "2");
+    td.classList.add('chat-icon-box');
 
     const td_name = document.createElement("td");
     td_name.classList.add('chat-name');
@@ -143,16 +145,20 @@
 
     const td_icon = document.createElement("td");
     td_icon.setAttribute("rowspan", "2");
+    td_icon.setAttribute("valign", "top");
+    td_icon.classList.add('chat-icon-box');
     const div_icon = document.createElement("div");
     div_icon.classList.add('chat-icon');
     td_icon.appendChild(div_icon);
 
     const td_text = document.createElement("td");
-    td_text.classList.add('chat-text');
     td_text.classList.add('text-right');
+    const p_text = document.createElement("p");
+    p_text.classList.add('chat-text');
 
     td_name.innerHTML = `${name.textContent}`;
-    td_text.innerHTML = `${msg.value}`;
+    p_text.innerHTML = `${msg.value}`;
+    td_text.appendChild(p_text);
     tr1.appendChild(td);
     tr1.appendChild(td_name);
     tr1.appendChild(td_icon);
@@ -160,9 +166,12 @@
     list.appendChild(tr1);
     list.appendChild(tr2);
 
-
     // Socket.ioサーバへ送信
     socket.emit("post", {room_name: room_name.textContent, name: name.textContent, text: msg.value});
+
+    // 一番下までスクロール
+    const container = document.querySelector(".chat-main-box");
+    container.scrollTop = container.scrollHeight;
 
     // チャットボックスを空にする
     msg.value = "";
@@ -178,6 +187,8 @@
 
     const td_icon = document.createElement("td");
     td_icon.setAttribute("rowspan", "2");
+    td_icon.setAttribute("valign", "top");
+    td_icon.classList.add('chat-icon-box');
     const div_icon = document.createElement("div");
     div_icon.classList.add('chat-icon');
     td_icon.appendChild(div_icon);
@@ -188,19 +199,27 @@
 
     const td = document.createElement("td");
     td.setAttribute("rowspan", "2");
+    td.classList.add('chat-icon-box');
 
     const td_text = document.createElement("td");
-    td_text.classList.add('chat-text');
     td_text.classList.add('text-left');
+    const p_text = document.createElement("p");
+    p_text.classList.add('chat-text');
 
     td_name.innerHTML = `${msg.name}`;
-    td_text.innerHTML = `${msg.text}`;
+    p_text.innerHTML = `${msg.text}`;
+    td_text.appendChild(p_text);
     tr1.appendChild(td_icon);
     tr1.appendChild(td_name);
     tr1.appendChild(td);
     tr2.appendChild(td_text);
     list.appendChild(tr1);
     list.appendChild(tr2);
+
+    // 一番下までスクロール
+    const container = document.querySelector(".chat-main-box");
+    container.scrollTop = container.scrollHeight;
+  
   });
 
   /**
