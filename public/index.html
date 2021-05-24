@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>shi-chat</title>
+  <link rel="stylesheet" href="/style.css">
+  <script  type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+
+  <!-- タイトル -->
+  <div class="title">
+    <h1>shi-chat</h1>
+    <p>全ルーム接続数：<span id="count"></span></p>
+    <p>ルーム名：<span id="room-name"></span></p>
+    <p>参加者：<span id="par-name"></span></p>
+    <p>あなたの名前：<span id="user-name"></span></p>
+  </div>
+
+  <!-- 名前入力 -->
+  <form id="name-post">
+    <input type="text" id="room_name" placeholder="ルーム名">
+    <input type="text" id="name" placeholder="名前">
+    <button>参加</button>
+  </form>
+
+  <!-- チャット -->
+  <div id="chat-box">
+    <!-- 発言ログ -->
+    <div class="chat-main-box">
+      <table id="msglist">
+      </table>
+    </div>
+    <form id="frm-post">
+      <input type="text" id="msg" placeholder="メッセージを入力" autocomplete="off">
+      <button>送信</button>
+    </form>
+  </div>
+
+<!-- ↓CDNで読み込み -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+<script src="/main.js"></script>
+</body>
+</html>

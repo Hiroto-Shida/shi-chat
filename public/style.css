@@ -1,4 +1,4 @@
-/* タイトル */
+/* 見出し */
 .title {
     text-align: center;
     background-color: #89fdcd;
@@ -14,7 +14,10 @@
     display: block;
 }
 
-/* チャット */
+/**
+ * チャット
+ */
+/* チャットを見る場所 */
 .chat-main-box {
     width: 500px;
     height: 500px;
@@ -34,9 +37,9 @@
     text-align: center;
     display: none;
 }
-.chat-name {
+/* .chat-name {
     text-align: right;
-}
+} */
 .chat-icon-box {
     width: 60px;
 }
