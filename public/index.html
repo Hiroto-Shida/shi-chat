@@ -7,11 +7,12 @@
   <script  type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </head>
 <body>
+<main>
 
   <!-- タイトル -->
   <div class="title">
+    <p class="client-count">全ルーム接続数：<span id="count"></span></p>
     <h1>shi-chat</h1>
-    <p>全ルーム接続数：<span id="count"></span></p>
     <p>ルーム名：<span id="room-name"></span></p>
     <p>参加者：<span id="par-name"></span></p>
     <p>あなたの名前：<span id="user-name"></span></p>
@@ -19,8 +20,8 @@
 
   <!-- 名前入力 -->
   <form id="name-post">
-    <input type="text" id="room_name" placeholder="ルーム名">
-    <input type="text" id="name" placeholder="名前">
+    <input type="text" id="room_name" placeholder="ルーム名"><br>
+    <input type="text" id="name" placeholder="名前"><br>
     <button>参加</button>
   </form>
 
@@ -37,6 +38,7 @@
     </form>
   </div>
 
+</main>
 <!-- ↓CDNで読み込み -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
 <script src="/main.js"></script>

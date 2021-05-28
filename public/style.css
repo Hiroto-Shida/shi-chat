@@ -1,45 +1,96 @@
+html,body,main {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-height: 100%;
+    width: 100%;
+}
+
 /* 見出し */
 .title {
+    /* height: 150px; */
     text-align: center;
     background-color: #89fdcd;
 }
 .title h1, .title p{
     margin: 0;
-    padding: 0.5em 0;
+    padding: 0.2em 0;
 }
-
+.client-count {
+    position: absolute;
+    top: 0;
+}
 /* 名前入力 */
 #name-post {
     text-align: center;
     display: block;
 }
 
+/* ルーム名・名前入力 */
+#name-post input{
+    margin: 10px;
+    border: #b588fc 2px solid;
+    border-radius: 0.5em;
+    font-size: 2em;
+}
+#name-post button{
+    margin: 10px;
+    padding: 0 1em;
+    border-radius: 0.5em;
+    background-color: #b588fc;
+    color: #ffffff;
+    font-size: 2em;
+}
+
+
 /**
  * チャット
  */
 /* チャットを見る場所 */
+#chat-box {
+    text-align: center;
+    display: none;
+    flex: 1;
+    overflow: auto;
+    position: relative;
+    flex-direction: column;
+    height: 100%;
+    max-height: 100%;
+}
 .chat-main-box {
     width: 500px;
-    height: 500px;
-    overflow: scroll;
-    margin-left: auto;
-    margin-right: auto;
+    flex: 1;
+    position: relative;
+    overflow-y: scroll;
+    margin: 10px auto auto auto;
     padding-bottom: 10px;
+    padding-right: 20px;
     border-radius: 0.5em;
     border: #b588fc 1px solid;
 }
+@media (max-width: 767px) {
+    .chat-box {
+        /* width: 90%; */
+        /* margin: 10px 10px 10px auto; */
+        padding-bottom: 10px;
+        padding-right: 20px;
+    }
+    .chat-main-box {
+        width: 90%;
+    }
+}
+
+
 #msglist {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
-#chat-box {
-    text-align: center;
-    display: none;
-}
-/* .chat-name {
-    text-align: right;
-} */
 .chat-icon-box {
     width: 60px;
 }
@@ -91,15 +142,23 @@
 #frm-post {
     width: 500px;
     height: 40px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 10px auto;
     padding-top: 0.1em;
+    display: flex;
+}
+@media (max-width: 767px) {
+    #frm-post {
+        width: 90%;
+    }
 }
 #frm-post input{
-    width: 87%;
+    /* width: 87%; */
+    flex: 1;
     height: 100%;
+    padding: 0;
     border: #b588fc 2px solid;
     border-radius: 0.5em;
+    font-size: 2em;
 }
 #frm-post input:focus {
     background-color: #ffc;
@@ -108,6 +167,9 @@
 #frm-post button{
     width: 10%;
     height: 100%;
+    margin-left: 5px;
+    padding: 0;
     border-radius: 0.5em;
-    background-color: #89fdcd;
+    background-color: #b588fc;
+    color: #ffffff;
 }
