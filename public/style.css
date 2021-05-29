@@ -61,6 +61,7 @@ main {
     flex-direction: column;
     height: 100%;
     max-height: 100%;
+    padding: 10px 20px 20px 10px;
 }
 .chat-main-box {
     width: 500px;
@@ -68,28 +69,19 @@ main {
     position: relative;
     overflow-y: scroll;
     margin: 10px auto auto auto;
-    padding-bottom: 10px;
-    padding-right: 20px;
     border-radius: 0.5em;
     border: #b588fc 1px solid;
 }
 @media (max-width: 767px) {
-    .chat-box {
-        /* width: 90%; */
-        /* margin: 10px 10px 10px auto; */
-        padding-bottom: 10px;
-        padding-right: 20px;
-    }
     .chat-main-box {
-        width: 90%;
+        width: 100%;
     }
 }
 
 
 #msglist {
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    /* margin: 0 20px 10px 10px; */
 }
 .chat-icon-box {
     width: 60px;
@@ -111,6 +103,7 @@ main {
     background-color: #89fdcd;
 }
 .text-left {
+    vertical-align: bottom;
     padding-right: 1.5em;
     text-align: left;
 }
@@ -125,6 +118,7 @@ main {
 }
 
 .text-right {
+    vertical-align: bottom;
     padding-left: 1.5em;
     text-align: right;
 }
@@ -142,13 +136,13 @@ main {
 #frm-post {
     width: 500px;
     height: 40px;
-    margin: 0 auto 10px auto;
+    margin: 0 auto 0 auto;
     padding-top: 0.1em;
     display: flex;
 }
 @media (max-width: 767px) {
     #frm-post {
-        width: 90%;
+        width: 100%;
     }
 }
 #frm-post input{
@@ -158,14 +152,14 @@ main {
     padding: 0;
     border: #b588fc 2px solid;
     border-radius: 0.5em;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 #frm-post input:focus {
     background-color: #ffc;
     outline: none; /* ※ブラウザが標準で付加する線を消したいとき */
 }
 #frm-post button{
-    width: 10%;
+    width: 50px;
     height: 100%;
     margin-left: 5px;
     padding: 0;
