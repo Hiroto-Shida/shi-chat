@@ -149,6 +149,16 @@ socket.on("member-post", (msg)=>{
     container.scrollTop = container.scrollHeight;
 });
 
+// 画面サイズが変わった時．主にスマホのキーボードが出た時
+window.addEventListener( 'resize', function() {
+    const a = window.innerHeight;
+    console.log(a);
+    // const container = document.querySelector("#chat-box");
+    // container.style.position = "absolute";
+    // container.style.bottom = "10px";
+}, false );
+
+
 /**
  * [イベント] ページの読込み完了
  */

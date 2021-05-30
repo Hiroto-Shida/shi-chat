@@ -38,6 +38,11 @@ main {
     border-radius: 0.5em;
     font-size: 2em;
 }
+#name-post input:focus {
+    background-color: #ffc;
+    outline: none; /* ※ブラウザが標準で付加する線を消したいとき */
+}
+
 #name-post button{
     margin: 10px;
     padding: 0 1em;
@@ -55,9 +60,10 @@ main {
 #chat-box {
     text-align: center;
     display: none;
-    flex: 1;
-    overflow: auto;
+    /* flex: 1; */
+    /* overflow: auto; */
     position: relative;
+    bottom: 10px;
     flex-direction: column;
     height: 100%;
     max-height: 100%;
