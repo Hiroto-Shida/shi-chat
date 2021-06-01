@@ -66,6 +66,7 @@ main {
 #name-post button{
     margin: 10px;
     padding: 0 1em;
+    border: #cc88fc 2px solid;
     border-radius: 0.5em;
     background-color: #cc88fc;
     color: #ffffff;
@@ -117,10 +118,10 @@ main {
     margin-top: auto;
 }
 .chat-icon-box {
-    width: 40px;
+    width: 45px;
 }
 .chat-icon {
-    margin: 20px auto auto auto;
+    margin: 15px auto auto auto;
     width: 35px;
     height: 35px;
     border-radius: 100%;

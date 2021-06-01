@@ -44,7 +44,6 @@ function chatPrint(direction, user_name, text, time) {
     if (direction == "to_other") {
         td_name.classList.add('text-right');
         td_text.classList.add('text-right');
-
         td_name.innerHTML = `${user_name}`;
         td_name.insertBefore(span_time, td_name.firstChild);
     }else if(direction == "to_me"){
@@ -54,7 +53,6 @@ function chatPrint(direction, user_name, text, time) {
         td_icon.appendChild(div_icon);
         td_name.classList.add('text-left');
         td_text.classList.add('text-left');
-
         td_name.innerHTML = `${user_name}`;
         td_name.appendChild(span_time);
     }
@@ -179,7 +177,7 @@ socket.on("member-post", (msg)=>{
 });
 
 /**
- * スクロール制御
+ * スクロール制御（チャット部分のスクロールのみを許可し，全体スクロールを禁止）
  */
 let scrollControll = function(event) {
   let scrollarea = $(event.target).closest('.chat-main-box');
@@ -191,10 +189,8 @@ let scrollControll = function(event) {
     event.preventDefault();
   }
 };
-
 document.addEventListener('touchmove', scrollControll, { passive: false }); // スクロール制限(SP)
 document.addEventListener('mousewheel', scrollControll, { passive: false }); // スクロール制限(PC)
-
 let scrollarea = document.querySelector('.chat-main-box');
 scrollarea.scrollTop = 1;
 scrollarea.addEventListener('scroll', function() {
@@ -206,7 +202,7 @@ scrollarea.addEventListener('scroll', function() {
 });
 
 
-// チャット入力ボックスに１文字以上入力されたら送信可能
+// 入力ボックスに１文字以上入力されたら送信可能
 window.addEventListener('DOMContentLoaded',function(){
     document.getElementById('submit').disabled = true;
     document.getElementById('msg').addEventListener('keyup',function(){

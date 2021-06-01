@@ -20,8 +20,8 @@
 
   <!-- 名前入力 -->
   <form id="name-post">
-    <input type="text" id="room_name" placeholder="ルーム名" autocomplete="off"><br>
-    <input type="text" id="name" placeholder="名前" autocomplete="off"><br>
+    <input type="text" id="room_name" placeholder="ルーム名" autocomplete="off" maxlength='10'><br>
+    <input type="text" id="name" placeholder="名前" autocomplete="off" maxlength='10'><br>
     <button>参加</button>
   </form>
 
@@ -33,7 +33,7 @@
       </table>
     </div>
     <form id="frm-post">
-      <input type="text" id="msg" placeholder="メッセージを入力" autocomplete="off">
+      <input type="text" id="msg" placeholder="メッセージを入力" autocomplete="off" maxlength='500'>
       <button id="submit">送信</button>
     </form>
   </div>
