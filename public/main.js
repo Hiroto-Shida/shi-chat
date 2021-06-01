@@ -149,16 +149,35 @@ socket.on("member-post", (msg)=>{
     container.scrollTop = container.scrollHeight;
 });
 
-// 画面サイズが変わった時
-window.addEventListener( 'resize', function() {
-    const a = window.innerHeight;
-    console.log(a);
-    // const container = document.querySelector("#user-name");
-    // container.innerHTML = a;
-    // const container = document.querySelector("#chat-box");
-    // container.style.position = "absolute";
-    // container.style.bottom = "10px";
-}, false );
+/**
+ * スクロール制御
+ */
+let scrollControll = function(event) {
+  let scrollarea = $(event.target).closest('.chat-main-box');
+//   let scrollArea2 = $(event.target).closest('.tablevalue > table');
+  if (scrollarea.length > 0 && scrollarea.scrollTop() != 0 && scrollarea.scrollTop + scrollarea.clientHeight !== scrollarea.scrollHeight) {
+//   if (event.target === scrollarea && scrollarea.scrollTop !== 0 && scrollarea.scrollTop + scrollarea.clientHeight !== scrollarea.scrollHeight) {
+    event.stopPropagation();
+    console.log("OK!!!!!")
+  }else{
+    console.log("だめ")
+    event.preventDefault();
+  }
+};
+
+document.addEventListener('touchmove', scrollControll, { passive: false }); // スクロール制限(SP)
+document.addEventListener('mousewheel', scrollControll, { passive: false }); // スクロール制限(PC)
+
+let scrollarea = document.querySelector('.chat-main-box');
+scrollarea.scrollTop = 1;
+scrollarea.addEventListener('scroll', function() {
+  if (scrollarea.scrollTop === 0) {
+    scrollarea.scrollTop = 1;
+  }else if (scrollarea.scrollTop + scrollarea.clientHeight === scrollarea.scrollHeight) {
+    scrollarea.scrollTop = scrollarea.scrollTop - 1;
+  }
+});
+
 
 
 /**
