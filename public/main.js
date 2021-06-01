@@ -14,7 +14,7 @@ function parNamePrint(list) {
         const span = document.createElement("span");
         span.classList.add('par-name');
         if (list[i] == clientName && first) {
-            span.classList.add('par-myname');
+            span.classList.add('par-myname'); // 自分の名前を強調
             first = false;
         }
         span.innerHTML = list[i];
