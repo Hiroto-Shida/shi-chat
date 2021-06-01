@@ -30,7 +30,7 @@ main {
 }
 /* 名前入力 */
 #name-post {
-    position: absolute;
+    position: fixed;
     top: 150px;
     width: 100%;
 
@@ -70,7 +70,8 @@ main {
     flex: 1;
     overflow: auto;
 
-    position: absolute;
+    position: fixed;
+    /* position: absolute; */
     left: 0;
     right: 0;
     margin: auto;
