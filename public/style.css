@@ -16,7 +16,7 @@ main {
     height: 150px;
     text-align: center;
     background-color: #89fdcd;
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%;
 }
