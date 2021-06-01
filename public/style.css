@@ -13,13 +13,16 @@ main {
 
 /* 見出し */
 .title {
-    /* height: 150px; */
+    height: 150px;
     text-align: center;
     background-color: #89fdcd;
+    position: absolute;
+    top: 0;
+    width: 100%;
 }
 .title h1, .title p{
     margin: 0;
-    padding: 0.2em 0;
+    padding: 3px 0;
 }
 .client-count {
     position: absolute;
@@ -27,6 +30,10 @@ main {
 }
 /* 名前入力 */
 #name-post {
+    position: absolute;
+    top: 150px;
+    width: 100%;
+
     text-align: center;
     display: block;
 }
@@ -62,21 +69,30 @@ main {
     display: none;
     flex: 1;
     overflow: auto;
-    position: relative;
-    bottom: 10px;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    /* bottom: 10px; */
     flex-direction: column;
-    height: 100%;
-    max-height: 100%;
-    padding: 10px 20px 20px 10px;
+    height: calc(100% - 150px);
+    max-height: calc(100% - 150px);
+    padding: 10px;
+    box-sizing: border-box;
+    top: 150px;
 }
 .chat-main-box {
     width: 500px;
     flex: 1;
     position: relative;
+    overflow-x: hidden;
     overflow-y: scroll;
-    margin: 10px auto auto auto;
+    margin: auto auto auto auto;
     border-radius: 0.5em;
     border: #b588fc 1px solid;
+    padding-bottom: 10px;
 }
 @media (max-width: 767px) {
     .chat-main-box {
@@ -106,7 +122,8 @@ main {
     padding: 5px;
     font-size: 1.3em;
     border-radius: 0.5em;
-    background-color: #89fdcd;
+    /* background-color: #89fdcd; */
+    background: linear-gradient(180deg, #89fdcd 70%, #7CE6BA 120%);
 }
 .text-left {
     vertical-align: bottom;
@@ -125,7 +142,7 @@ main {
 
 .text-right {
     vertical-align: bottom;
-    padding-left: 1.5em;
+    padding: 0 0.5em 0 1.5em;
     text-align: right;
 }
 .text-right .chat-text:before {
@@ -169,7 +186,18 @@ main {
     height: 100%;
     margin-left: 5px;
     padding: 0;
+    border: #b588fc 2px solid;
+    border-bottom: #b588fc 2px solid;
+    /* border: none; */
     border-radius: 0.5em;
     background-color: #b588fc;
     color: #ffffff;
+    font-size: 1em;
+    /* box-shadow: 2px 2px 0 #926ECC; */
+}
+#frm-post button:active {
+	-webkit-transform: translate(0,2px);
+	-moz-transform: translate(0,2px);
+	transform: translate(0,2px);
+	border-bottom: none;
 }
