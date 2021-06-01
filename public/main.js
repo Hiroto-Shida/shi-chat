@@ -153,6 +153,8 @@ socket.on("member-post", (msg)=>{
 window.addEventListener( 'resize', function() {
     const a = window.innerHeight;
     console.log(a);
+    const container = document.querySelector("#user-name");
+    container.innerHTML = a;
     // const container = document.querySelector("#chat-box");
     // container.style.position = "absolute";
     // container.style.bottom = "10px";
