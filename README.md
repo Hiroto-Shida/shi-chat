@@ -7,3 +7,5 @@ https://shi-chat.herokuapp.com/
 使用したもの
 コード：　node.js　Socket.io　等
 サーバ：　HEROKU https://www.heroku.com/
+
+※現在はherokuの無料プラン終了により閉鎖
